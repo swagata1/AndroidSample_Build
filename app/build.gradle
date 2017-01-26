@@ -1,21 +1,25 @@
 apply plugin: 'com.android.application'
 
-android {
+android{ 
     compileSdkVersion 25
     buildToolsVersion "25.0.1"
-    defaultConfig {
-        applicationId "com.example.m1031329.helloworld"
-        minSdkVersion 15
-        targetSdkVersion 25
-        versionCode 1
-        versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    defaultConfig{ 
+          applicationId "com.example.m1031329.helloworld"
+          minSdkVersion 15
+          targetSdkVersion 25
+          versionCode 1
+          versionName "1.0"
+          testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+         manifestPlaceholders = [HOCKEYAPP_APP_ID: "632afd60ac434118b45a869a817b9107"]
     }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+    lintOptions {
+        abortOnError false
     }
 }
 
@@ -26,4 +30,8 @@ dependencies {
     })
     compile 'com.android.support:appcompat-v7:24.+'
     testCompile 'junit:junit:4.12'
+    compile 'net.hockeyapp.android:HockeySDK:4.0.0'
+}
+repositories{
+     jcenter()
 }
