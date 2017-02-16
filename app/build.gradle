@@ -10,7 +10,7 @@ android{
           versionCode 1
           versionName "1.0"
           testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-         manifestPlaceholders = [HOCKEYAPP_APP_ID: "632afd60ac434118b45a869a817b9107"]
+         manifestPlaceholders = [HOCKEYAPP_APP_ID: "632afd60ac434118b45a869a817b9107",HOCKEYAPP_APP_SECRET:"856f00bc5191e5ddf98c731bad41bfd4" ]
     }
     buildTypes {
         release {
@@ -18,9 +18,10 @@ android{
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    lintOptions {
+lintOptions {
         abortOnError false
     }
+    
 }
 
 dependencies {
@@ -30,7 +31,7 @@ dependencies {
     })
     compile 'com.android.support:appcompat-v7:24.+'
     testCompile 'junit:junit:4.12'
-    compile 'net.hockeyapp.android:HockeySDK:4.0.0'
+    compile 'net.hockeyapp.android:HockeySDK:4.1.1'
 }
 repositories{
      jcenter()
